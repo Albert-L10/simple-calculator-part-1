@@ -9,85 +9,38 @@ public class Calculator {
     public static void main(String[] args)
     {
 
-        int sum[]={1,2,3,4};
-        int tot[]={1,2,3,4};
-        int total=0;
+        System.out.println("\nHere is your Simple Calculator!\n");
 
 
-        int temp=0;
-
-
-
-        System.out.println("\nWelcome to MyCalculator!\n");
-
-            String opt=" ";
-
-            Scanner key=new Scanner(System.in);
-
-        System.out.println("To add,Enter 'A' and to multiply,Enter 'B': ");
-        opt=key.next();
-
-            switch (opt) {
-
-                case "A":
-                    case "a":
-
-                        System.out.println("your sum is: " +add(sum,total));
-
-                break;
-
-                case "B":
-                case "b":
-
-
-                    System.out.println("your product is: "+ multiply(tot,temp));
-
-
-
-                break;
-
-
-                default:
-                    System.out.println("Your option is invalid!");
-            }
-
-
+        System.out.println("Your sum is: "+add(1,2,3,4));
+        System.out.println("Your product is: "+multiply(1,2,3,4,5));
 
 
     }
 
-    public static int add(int sum[],int total) {
-
-
-        int toAdd = 0;
-
-
-
-        for(int j=0;j<sum.length;j++) {
-
-            sum[j]+= toAdd;
-            total+=sum[j];
-        }
-
-
-    return total ;
-    }
-
-    public static int multiply(int tot[],int temp)
+    public static int add(int... number)
     {
+        int total=0;
+        for(int num:number) {
+            total +=num;
+        }
 
-         temp=1;
 
+        return total;
 
+    }
 
-        for(int i=0;i<tot.length;i++)
+    public static int multiply(int... number)
+    {
+        int prod=1;
+
+        for(int num: number)
         {
-
-            temp*=tot[i];
+            prod*=num;
 
         }
-        return temp;
 
+        return prod;
     }
 
 
